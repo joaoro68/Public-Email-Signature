@@ -80,14 +80,15 @@ p.right-menu {
 
 .btn-success {
   color: #fff;
-  background-color: #84ab79;
-  border-color: #84ab79;
+  background-color: #66855e;
+  border-color: #66855e;
+  transition: all 200ms ease-in-out;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #648a5a;
-  border-color: #84ab79;
+  background-color: #4e6b46;
+  border-color: #66855e;
 }
 
 .logo {

@@ -15,6 +15,14 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   let department = document.querySelector("#department-input").value;
   let officePhone = document.querySelector("#officePhone-input").value;
   let mobilePhone = document.querySelector("#mobilePhone-input").value;
+  let companyName = document.querySelector("#companyName").value;
+  let logoUrl = document.querySelector("#logoUrl").value;
+  let color = document.querySelector("#colorInput").value;
+  let facebook = document.querySelector("#facebookInput").value;
+  let linkedin = document.querySelector("#linkedinInput").value;
+  let instagram = document.querySelector("#instagramInput").value;
+  let youtube = document.querySelector("#youtubeInput").value;
+  let website = document.querySelector("#websiteInput").value;
 
   function checkDepartment() {
     if (department !== "") {
@@ -26,12 +34,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   let phoneIcon = `<span
       style="
         display: block;
-        background-color: #84ac7a;
+        background-color: ${color};
       "
       ><img
         style="
           display: block;
-          background-color: #84ac7a;
+          background-color: ${color};
         "
         src="https://nwl-signature.netlify.app/images/phone-icon-2x.png"
         alt=""
@@ -95,14 +103,14 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   signature.innerHTML = `<table style="min-width:500px; vertical-align:-webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
     <tbody>
       <tr style="height: 130px">
-        <td style="height: 130px"><a href="https://naturalwayofliving.com/" target="_blank">
+        <td style="height: 130px"><a href="${website}" target="_blank">
           <img
             style="
               max-width: 130px;
               display: block;
               margin: 0 auto;
             "
-            src="https://nwl-signature.netlify.app/images/nwl_circle_green.png"
+            src="${logoUrl}"
             alt=""
             width="130"
           /></a>
@@ -112,7 +120,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
           style="
             height: 110px;
             width: 100%;
-            border-bottom: 1px solid #84ac7a;
+            border-bottom: 1px solid ${color};
             border-left: none;
             display: block;
           "
@@ -156,7 +164,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
             "
           >
             <strong
-              >${department}Natural Way Of Living</strong
+              >${department}${companyName}</strong
             >
           </p>
         </td>
@@ -167,12 +175,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
             style="
               display: inline-block;
               padding: 0px;
-              background-color: #8fadc9;
+              background-color: ${color};
             "
-            href="https://www.facebook.com/nwlcommunity/" target="_blank"
+            href="https://facebook.com/${facebook}" target="_blank"
             ><img
               style="
-                background-color: #8fadc9;
+                background-color: ${color};
                 max-width: 135px;
                 display: block;
               "
@@ -183,12 +191,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
             style="
               display: inline-block;
               padding: 0px;
-              background-color: #8fadc9;
+              background-color: ${color};
             "
-            href="https://www.linkedin.com/company/naturalwayofliving/" target="_blank"
+            href="https://linkedin.com/${linkedin}" target="_blank"
             ><img
               style="
-                background-color: #8fadc9;
+                background-color: ${color};
                 max-width: 135px;
                 display: block;
               "
@@ -199,12 +207,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
             style="
               display: inline-block;
               padding: 0px;
-              background-color: #8fadc9;
+              background-color: ${color};
             "
-            href="https://www.instagram.com/naturalwayofliving/" target="_blank"
+            href="https://instagram.com/${instagram}" target="_blank"
             ><img
               style="
-                background-color: #8fadc9;
+                background-color: ${color};
                 max-width: 135px;
                 display: block;
               "
@@ -215,12 +223,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
             style="
               display: inline-block;
               padding: 0px;
-              background-color: #8fadc9;
+              background-color: ${color};
             "
-            href="https://www.youtube.com/NaturalWayofLiving" target="_blank"
+            href="https://youtube.com/${youtube}" target="_blank"
             ><img
               style="
-                background-color: white;
+                background-color: ${color};
                 max-width: 135px;
                 display: block;
               "
@@ -247,12 +255,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                   <span
                     style="
                       display: block;
-                      background-color: #84ac7a;
+                      background-color: ${color};
                     "
                     ><img
                       style="
                         display: block;
-                        background-color: #84ac7a;
+                        background-color: ${color};
                       "
                       src="https://nwl-signature.netlify.app/images/email-icon-2x.png"
                       alt=""
@@ -267,8 +275,8 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                       color: #000000;
                       font-size: 12px;
                     "
-                    href="mailto:${emailAddress}@naturalwayofliving.com"
-                    >${emailAddress}@naturalwayofliving.com</a
+                    href="mailto:${emailAddress}"
+                    >${emailAddress}</a
                   >
                 </td>
               </tr>
@@ -277,12 +285,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                   <span
                     style="
                       display: block;
-                      background-color: #84ac7a;
+                      background-color: ${color};
                     "
                     ><img
                       style="
                         display: block;
-                        background-color: #84ac7a;
+                        background-color: ${color};
                       "
                       src="https://nwl-signature.netlify.app/images/link-icon-2x.png"
                       alt=""
@@ -297,8 +305,8 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                       color: #000000;
                       font-size: 12px;
                     "
-                    href="//www.naturalwayofliving.com" target="_blank"
-                    >www.naturalwayofliving.com</a
+                    href="${website}" target="_blank"
+                    >${website}</a
                   >
                 </td>
               </tr>
