@@ -24,6 +24,25 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   let youtube = document.querySelector("#youtubeInput").value;
   let website = document.querySelector("#websiteInput").value;
 
+  let imageLogo = `<img
+            style="
+              max-width: 130px;
+              display: block;
+              margin: 0 auto;
+            "
+            src="${logoUrl}"
+            alt=""
+            max-width="130"
+          />`;
+  function showLogo() {
+    if (imageLogo !== "") {
+      imageLogo = `${imageLogo}`;
+    } else {
+      imageLogo = ``;
+    }
+  }
+  showLogo();
+
   function checkDepartment() {
     if (department !== "") {
       department = `${department} | `;
@@ -88,37 +107,125 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   }
   checkPhoneNumber();
 
-  // update visibility
-  let card = document.querySelector("#card");
-  let copySignature = document.querySelector("#copySignature");
-  let copySignature2 = document.querySelector("#copySignature2");
+  let websiteIcon = `<span
+                    style="
+                      display: block;
+                      background-color: ${color};
+                    "
+                    ><img
+                      style="
+                        display: block;
+                        background-color: ${color};
+                      "
+                      src="https://nwl-signature.netlify.app/images/link-icon-2x.png"
+                      alt=""
+                      width="13"
+                  /></span>`;
 
-  card.setAttribute("class", "visible");
-  copySignature.setAttribute("class", "visible");
-  copySignature2.setAttribute("class", "visible");
+  function showWebsiteIcon() {
+    if (website !== "") {
+      return websiteIcon;
+    } else {
+      websiteIcon = ``;
+    }
+  }
+  showWebsiteIcon();
+
+  let facebookIcon = `<img
+              style="
+                background-color: ${color};
+                max-width: 135px;
+                display: block;
+              "
+              src="https://nwl-signature.netlify.app/images/facebook-icon-2x.png"
+              alt="facebook"
+              height="24" />`;
+
+  function showFacebookIcon() {
+    if (facebook !== "") {
+      return facebookIcon;
+    } else {
+      facebookIcon = ``;
+    }
+  }
+  showFacebookIcon();
+
+  let linkedinIcon = `<img
+              style="
+                background-color: ${color};
+                max-width: 135px;
+                display: block;
+              "
+              src="https://nwl-signature.netlify.app/images/linkedin-icon-2x.png"
+              alt="linkedin"
+              height="24" />`;
+
+  function showLinkedinIcon() {
+    if (linkedin !== "") {
+      return linkedinIcon;
+    } else {
+      linkedinIcon = ``;
+    }
+  }
+  showLinkedinIcon();
+
+  let instagramIcon = `<img
+              style="
+                background-color: ${color};
+                max-width: 135px;
+                display: block;
+              "
+              src="https://nwl-signature.netlify.app/images/instagram-icon-2x.png"
+              alt="instagram"
+              height="24" />`;
+
+  function showInstagramIcon() {
+    if (instagram !== "") {
+      return instagramIcon;
+    } else {
+      instagramIcon = ``;
+    }
+  }
+  showInstagramIcon();
+
+  let youtubeIcon = `<img
+              style="
+                background-color: ${color};
+                max-width: 135px;
+                display: block;
+              "
+              src="https://nwl-signature.netlify.app/images/biggeryoutube.png"
+              alt="youtube"
+              height="24"
+          />`;
+
+  function showYoutubeIcon() {
+    if (youtube !== "") {
+      return youtubeIcon;
+    } else {
+      youtubeIcon = ``;
+    }
+  }
+  showYoutubeIcon();
+
+  // update visibility
+  document.querySelector("#card").setAttribute("class", "visible");
+  document.querySelector("#copySignature").setAttribute("class", "visible");
+  document.querySelector("#copySignature2").setAttribute("class", "visible");
 
   let signature = document.querySelector("#signatureGenerated");
 
   // generate the resulted signature
-  signature.innerHTML = `<table style="min-width:500px; vertical-align:-webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
+  signature.innerHTML = `<table style="min-width:250px; vertical-align:-webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
     <tbody>
-      <tr style="height: 130px">
-        <td style="height: 130px"><a href="${website}" target="_blank">
-          <img
-            style="
-              max-width: 130px;
-              display: block;
-              margin: 0 auto;
-            "
-            src="${logoUrl}"
-            alt=""
-            width="130"
-          /></a>
+      <tr >
+        <td ><a href="${website}" target="_blank">
+          ${imageLogo}</a>
         </td>
-        <td style="height: 130px; width: 25px">&nbsp;</td>
+        <td  width: 25px">&nbsp;</td>
         <td
           style="
-            height: 110px;
+           
             width: 100%;
             border-bottom: 1px solid ${color};
             border-left: none;
@@ -127,6 +234,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
         >
           <h3
             style="
+            min-width:150px;
               margin: 0px;
               font-size: 18px;
               color: #000000; text-transform: capitalize;
@@ -178,15 +286,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               background-color: ${color};
             "
             href="https://facebook.com/${facebook}" target="_blank"
-            ><img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/facebook-icon-2x.png"
-              alt="facebook"
-              height="24" /></a
+            >${facebookIcon}</a
           >&nbsp;<a
             style="
               display: inline-block;
@@ -194,15 +294,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               background-color: ${color};
             "
             href="https://linkedin.com/${linkedin}" target="_blank"
-            ><img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/linkedin-icon-2x.png"
-              alt="linkedin"
-              height="24" /></a
+            >${linkedinIcon}</a
           >&nbsp;<a
             style="
               display: inline-block;
@@ -210,15 +302,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               background-color: ${color};
             "
             href="https://instagram.com/${instagram}" target="_blank"
-            ><img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/instagram-icon-2x.png"
-              alt="instagram"
-              height="24" /></a
+            >${instagramIcon}</a
           >&nbsp;<a
             style="
               display: inline-block;
@@ -226,16 +310,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               background-color: ${color};
             "
             href="https://youtube.com/${youtube}" target="_blank"
-            ><img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/biggeryoutube.png"
-              alt="youtube"
-              height="24"
-          /></a>
+            >${youtubeIcon}</a>
         </td>
         <td style="height: 22px">&nbsp;</td>
         <td style="height: 22px">
@@ -282,20 +357,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               </tr>
               <tr>
                 <td>
-                  <span
-                    style="
-                      display: block;
-                      background-color: ${color};
-                    "
-                    ><img
-                      style="
-                        display: block;
-                        background-color: ${color};
-                      "
-                      src="https://nwl-signature.netlify.app/images/link-icon-2x.png"
-                      alt=""
-                      width="13"
-                  /></span>
+                  ${websiteIcon}
                 </td>
                 <td>&nbsp;</td>
                 <td>
