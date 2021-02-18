@@ -1,177 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Signature Generator</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/eb42c3a17f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Email Signature Generator</title>
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/eb42c3a17f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/src/style.css" />
-</head>
-
-<body>
-  <div class="container">
-    <div class="app-wrapper">
-      <h1>Simple Email Signature Generator</h1>
-      <hr />
-      <!-- 1st Row -->
-      <div class="row form-data">
-        <!-- Left Column -->
-        <div class="col">
+  <body>
+    <div class="container">
+      <div class="app-wrapper">
+        <h1>Simple Email Signature Generator</h1>
+        <hr />
+        <!-- 1st Row -->
+        <div class="row form-data">
+          <!-- Left Column -->
           <form class="signature">
-            <div class="row mb-2">
-              <label for="firstName" class="col-sm col-form-label">First Name<sup
-                  class="required">*(required)</sup></label>
-              <div class="col-sm">
-                <input type="text" class="form-control" id="firstName-input" aria-label="First name" />
+            <div class="row">
+              <div class="col">
+                <div class="row mb-2">
+                  <label for="firstName" class="col-sm col-form-label"
+                    >First Name<sup class="required">*(required)</sup></label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName-input"
+                      aria-label="First name"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="lastName" class="col-sm col-form-label"
+                    >Last Name</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName-input"
+                      aria-label="Last name"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="jobTitle" class="col-sm col-form-label"
+                    >Job Title<sup class="required">*(required)</sup></label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jobTitle-input"
+                      aria-label="Job Title"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="customField" class="col-sm col-form-label"
+                    >Custom Field</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="customField-input"
+                      aria-label="Custom Field"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="department" class="col-sm col-form-label"
+                    >Department</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="department-input"
+                      aria-label="Department"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="officePhone" class="col-sm col-form-label"
+                    >Office Phone</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="officePhone-input"
+                      aria-label="Office Phone"
+                      placeholder="include the country code"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="mobilePhone" class="col-sm col-form-label"
+                    >Mobile Phone</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="mobilePhone-input"
+                      aria-label="Mobile Phone"
+                      placeholder="include the country code"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="emailAddress" class="col-sm col-form-label"
+                    >Email<sup class="required">*(required)</sup>
+                    <address></address>
+                  </label>
+                  <div class="col-sm-6">
+                    <input
+                      type="email"
+                      class="form-control col-sm-1"
+                      id="emailAddress-input"
+                      aria-label="Email Address"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="row mb-1">
-              <label for="lastName" class="col-sm col-form-label">Last Name</label>
-              <div class="col-sm">
-                <input type="text" class="form-control" id="lastName-input" aria-label="Last name" />
-              </div>
-            </div>
-            <div class="row mb-1">
-              <label for="jobTitle" class="col-sm col-form-label">Job Title<sup
-                  class="required">*(required)</sup></label>
-              <div class="col-sm">
-                <input type="text" class="form-control" id="jobTitle-input" aria-label="Job Title" />
-              </div>
-            </div>
-            <div class="row mb-1">
-              <label for="customField" class="col-sm col-form-label">Custom Field</label>
-              <div class="col-sm">
-                <input type="text" class="form-control" id="customField-input" aria-label="Custom Field" />
-              </div>
-            </div>
-            <div class="row mb-1">
-              <label for="department" class="col-sm col-form-label">Department</label>
-              <div class="col-sm">
-                <input type="text" class="form-control" id="department-input" aria-label="Department" />
-              </div>
-            </div>
-            <div class="row mb-1">
-              <label for="officePhone" class="col-sm col-form-label">Office Phone</label>
-              <div class="col-sm">
-                <input type="tel" class="form-control" id="officePhone-input" aria-label="Office Phone"
-                  placeholder="include the country code" />
-              </div>
-            </div>
-            <div class="row mb-1">
-              <label for="mobilePhone" class="col-sm col-form-label">Mobile Phone</label>
-              <div class="col-sm">
-                <input type="tel" class="form-control" id="mobilePhone-input" aria-label="Mobile Phone"
-                  placeholder="include the country code" />
-              </div>
-            </div>
-            <div class="row mb-1">
-              <label for="emailAddress" class="col-sm col-form-label">Email<sup class="required">*(required)</sup>
-                <address></address>
-              </label>
-              <div class="col-sm-6">
-                <input type="email" class="form-control col-sm-1" id="emailAddress-input" aria-label="Email Address" />
-              </div>
-            </div>
-        </div>
-        <!-- Right Column -->
-        <div class="col">
-          <div class="row mb-1">
-            <label for="companyName" class="col-sm col-form-label">Company Name</label>
-            <div class="col-sm">
-              <input type="text" class="form-control" id="companyName" aria-label="Company Name"/>
-            </div>
-          </div>
-          <div class="row mb-1">
-            <label for="companyLogo" class="col-sm col-form-label">Company Logo / Profile Picture</label>
-            <div class="col-sm">
-              <input type="text" class="form-control" id="logoUrl" aria-label="Company Logo" placeholder="https://"/>
-            </div>
-          </div>
+              <!-- Right Column -->
+              <div class="col">
+                <div class="row mb-1">
+                  <label for="companyName" class="col-sm col-form-label"
+                    >Company Name</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="companyName"
+                      aria-label="Company Name"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="companyLogo" class="col-sm col-form-label"
+                    >Company Logo / Profile Picture</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="logoUrl"
+                      aria-label="Company Logo"
+                      placeholder="https://"
+                    />
+                  </div>
+                </div>
 
-          <div class="row mb-1">
-            <label for="colorInput" class="col-sm col-form-label">Icons Color</label>
-            <div class="col-sm">
-              <input type="color" class="form-control form-control-color" id="colorInput" value="#563d7c"
-                title="Choose your color">
-            </div>
-          </div>
-          <div class="row mb-1">
-            <label for="facebook" class="col-sm col-form-label">Facebook</label>
-            <div class="col-sm">
-              <input type="text" class="form-control" id="facebookInput" aria-label="Facebook" />
-            </div>
-          </div>
-          <div class="row mb-1">
-            <label for="linkedin" class="col-sm col-form-label">LinkedIn</label>
-            <div class="col-sm">
-              <input type="text" class="form-control" id="linkedinInput" aria-label="LinkedIn" />
-            </div>
-          </div>
-          <div class="row mb-1">
-            <label for="instagram" class="col-sm col-form-label">Instagram</label>
-            <div class="col-sm">
-              <input type="text" class="form-control" id="instagramInput" aria-label="Instagram" />
-            </div>
-          </div>
-          <div class="row mb-1">
-            <label for="youtube" class="col-sm col-form-label">YouTube</label>
-            <div class="col-sm">
-              <input type="text" class="form-control" id="youtubeInput" aria-label="YouTube" />
-            </div>
-          </div>
-          <div class="row mb-1">
-            <label for="website" class="col-sm col-form-label">Website</label>
-            <div class="col-sm">
-              <input type="text" class="form-control" id="websiteInput" aria-label="Website" placeholder="https://" />
-            </div>
-          </div>
-          <br><br>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="submit" class="btn btn-success" id="submit">Submit</button>
-          </div>
-          </form>
-        </div>
-      </div>
-      <!--2nd Row -->
-      <div class="row mb-5">
-        <!-- Left Column -->
-        <div class="col-6">
-          <div id="copySignature" class="invisible">
-            <div class="card border">
-              <div class="card-body">
-                <label for="emailSignature" class="col-sm col-form-label"><strong>Email Signature</strong>
-                </label>
-                <textarea name="signatureOutput" id="signatureHtml" cols="55" style="height: 180px;"></textarea>
+                <div class="row mb-1">
+                  <label for="colorInput" class="col-sm col-form-label"
+                    >Icons Color</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="color"
+                      class="form-control form-control-color"
+                      id="colorInput"
+                      value="#563d7c"
+                      title="Choose your color"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="facebook" class="col-sm col-form-label"
+                    >Facebook</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="facebookInput"
+                      aria-label="Facebook"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="linkedin" class="col-sm col-form-label"
+                    >LinkedIn</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="linkedinInput"
+                      aria-label="LinkedIn"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="instagram" class="col-sm col-form-label"
+                    >Instagram</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="instagramInput"
+                      aria-label="Instagram"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="youtube" class="col-sm col-form-label"
+                    >YouTube</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="youtubeInput"
+                      aria-label="YouTube"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-1">
+                  <label for="website" class="col-sm col-form-label"
+                    >Website</label
+                  >
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="websiteInput"
+                      aria-label="Website"
+                      placeholder="https://"
+                    />
+                  </div>
+                </div>
+                <br /><br />
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                  <button type="submit" class="btn btn-success" id="copyToClipboard" ;>
-                    Copy Code
+                  <button type="submit" class="btn btn-success" id="submit">
+                    Submit
                   </button>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
-        <!-- Right Column -->
-        <div class="col-6">
-          <div class="card invisible" id="card">
-            <div class="card-body border rounded">
-              <div class="row">
-                <div class="col">
-                  <div id="signatureGenerated"></div>
-                  <br />
-                  <div id="copySignature2" class="invisible">
-
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                      <button type="submit" class="btn btn-success" id="copyToClipboard2" ;>
-                        Copy Signature
-                      </button>
+        <!--2nd Row -->
+        <div class="row mb-5">
+          <!-- Left Column -->
+          <div class="col-6">
+            <div id="copySignature" class="invisible">
+              <div class="card border">
+                <div class="card-body">
+                  <label for="emailSignature" class="col-sm col-form-label"
+                    ><strong>Email Signature</strong>
+                  </label>
+                  <textarea
+                    name="signatureOutput"
+                    id="signatureHtml"
+                    cols="55"
+                    style="height: 180px"
+                  ></textarea>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button
+                      type="submit"
+                      class="btn btn-success"
+                      id="copyToClipboard"
+                      ;
+                    >
+                      Copy Code
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column -->
+          <div class="col-6">
+            <div class="card invisible" id="card">
+              <div class="card-body border rounded">
+                <div class="row">
+                  <div class="col">
+                    <div id="signatureGenerated"></div>
+                    <br />
+                    <div id="copySignature2" class="invisible">
+                      <div
+                        class="d-grid gap-2 d-md-flex justify-content-md-end"
+                      >
+                        <button
+                          type="submit"
+                          class="btn btn-success"
+                          id="copyToClipboard2"
+                          ;
+                        >
+                          Copy Signature
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -179,10 +321,15 @@
             </div>
           </div>
         </div>
+        <footer>
+          <i class="fab fa-github-alt"></i> Open-source code by
+          <a href="https://github.com/irSilviana/Public-Email-Signature"
+            >IrSilviana</a
+          >
+          | 2021 - Simple Email Signature Generator
+        </footer>
       </div>
-      <footer>© 2021 - NWL Signature</footer>
     </div>
-  </div>
-</body>
-<script src="src/index.js"></script>
+  </body>
+  <script src="src/index.js"></script>
 </html>

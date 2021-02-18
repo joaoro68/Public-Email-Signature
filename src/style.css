@@ -48,10 +48,20 @@ form {
 }
 
 footer {
-  font-size: 14px;
+  font-size: 12px;
   border-top: 1px solid #cacaca;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+footer a {
+  color: #1879a3;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  color: #5e7985;
+  text-decoration: underline;
 }
 
 p.right-menu {
