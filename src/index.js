@@ -447,11 +447,15 @@ function required(event) {
   );
   let jobTitle = document.querySelector("#jobTitle-input").value;
   let emailAddress = document.querySelector("#emailAddress-input").value;
+  let regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/;
 
   if (firstName === "" || jobTitle === "" || emailAddress === "") {
     alert("Please fill in all the required fields ☺🙏🏼");
-  } else {
+  } else if (firstName !== "" && jobTitle !== "" && emailAddress.match(regex)) {
     handleSubmit(firstName, jobTitle, emailAddress);
+  } else {
+    alert("Please write the correct email ID ☺🙏🏼");
   }
 }
+
 document.querySelector("#submit").addEventListener("click", required);
