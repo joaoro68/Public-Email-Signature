@@ -11,18 +11,18 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   let lastName = capitalizeFirstLetter(
     document.querySelector("#lastName-input").value
   );
-  let customField = document.querySelector("#customField-input").value;
+  /*let customField = document.querySelector("#customField-input").value;*/
   let department = document.querySelector("#department-input").value;
   let officePhone = document.querySelector("#officePhone-input").value;
   let mobilePhone = document.querySelector("#mobilePhone-input").value;
-  let companyName = document.querySelector("#companyName").value;
-  let logoUrl = document.querySelector("#logoUrl").value;
-  let color = document.querySelector("#colorInput").value;
-  let facebook = document.querySelector("#facebookInput").value;
+  /*let companyName = document.querySelector("#companyName").value;*/
+  /*let logoUrl = document.querySelector("#logoUrl").value;*/
+  /*let color = document.querySelector("#colorInput").value;*/
+ /* let facebook = document.querySelector("#facebookInput").value;
   let linkedin = document.querySelector("#linkedinInput").value;
   let instagram = document.querySelector("#instagramInput").value;
   let youtube = document.querySelector("#youtubeInput").value;
-  let website = document.querySelector("#websiteInput").value;
+  let website = document.querySelector("#websiteInput").value;*/
 
   let imageLogo = `<img
             style="
@@ -30,7 +30,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               display: block;
               margin: 0 auto;
             "
-            src="${logoUrl}"
+            src="images/signature.png"
             alt=""
             max-width="130"
           />`;
@@ -43,6 +43,8 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   }
   showLogo();
 
+  
+
   function checkDepartment() {
     if (department !== "") {
       department = `${department} | `;
@@ -53,12 +55,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   let phoneIcon = `<span
       style="
         display: block;
-        background-color: ${color};
+        background-color: #186737;
       "
       ><img
         style="
           display: block;
-          background-color: ${color};
+          background-color: #186737;
         "
         src="https://nwl-signature.netlify.app/images/phone-icon-2x.png"
         alt=""
@@ -83,7 +85,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                       font-size: 12px;
                     "
                     href="tel:${officePhone}"
-                    >${officePhone}</a>`;
+                    >&nbsp;${officePhone}</a>`;
 
   let mobilePh = `<a
                     style="
@@ -110,12 +112,12 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   let websiteIcon = `<span
                     style="
                       display: block;
-                      background-color: ${color};
+                      background-color: #186737;
                     "
                     ><img
                       style="
                         display: block;
-                        background-color: ${color};
+                        background-color: #186737;
                       "
                       src="https://nwl-signature.netlify.app/images/link-icon-2x.png"
                       alt=""
@@ -123,90 +125,11 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                   /></span>`;
 
   function showWebsiteIcon() {
-    if (website !== "") {
+    
       return websiteIcon;
-    } else {
-      websiteIcon = ``;
-    }
+   
   }
   showWebsiteIcon();
-
-  let facebookIcon = `<img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/facebook-icon-2x.png"
-              alt="facebook"
-              height="24" />`;
-
-  function showFacebookIcon() {
-    if (facebook !== "") {
-      return facebookIcon;
-    } else {
-      facebookIcon = ``;
-    }
-  }
-  showFacebookIcon();
-
-  let linkedinIcon = `<img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/linkedin-icon-2x.png"
-              alt="linkedin"
-              height="24" />`;
-
-  function showLinkedinIcon() {
-    if (linkedin !== "") {
-      return linkedinIcon;
-    } else {
-      linkedinIcon = ``;
-    }
-  }
-  showLinkedinIcon();
-
-  let instagramIcon = `<img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/instagram-icon-2x.png"
-              alt="instagram"
-              height="24" />`;
-
-  function showInstagramIcon() {
-    if (instagram !== "") {
-      return instagramIcon;
-    } else {
-      instagramIcon = ``;
-    }
-  }
-  showInstagramIcon();
-
-  let youtubeIcon = `<img
-              style="
-                background-color: ${color};
-                max-width: 135px;
-                display: block;
-              "
-              src="https://nwl-signature.netlify.app/images/biggeryoutube.png"
-              alt="youtube"
-              height="24"
-          />`;
-
-  function showYoutubeIcon() {
-    if (youtube !== "") {
-      return youtubeIcon;
-    } else {
-      youtubeIcon = ``;
-    }
-  }
-  showYoutubeIcon();
 
   // update visibility
   document.querySelector("#card").setAttribute("class", "visible");
@@ -219,19 +142,11 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   signature.innerHTML = `<table style="min-width:250px; vertical-align:-webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
     <tbody>
       <tr >
-        <td ><a href="${website}" target="_blank">
+        <td ><a href="https://www.bopaper.com.br/" target="_blank">
           ${imageLogo}</a>
         </td>
         <td  width: 25px">&nbsp;</td>
-        <td
-          style="
-           
-            width: 100%;
-            border-bottom: 1px solid ${color};
-            border-left: none;
-            display: block;
-          "
-        >
+        <td  style=" width: 100%; border-left: none; display: block;">
           <h3
             style="
             min-width:150px;
@@ -260,7 +175,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               line-height: 22px; text-transform: capitalize;
             "
           >
-            ${customField}
+            
           </p>
           <p
             style="
@@ -269,114 +184,101 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
               color: #000000;
               font-size: 14px;
               line-height: 22px; text-transform: capitalize;
+              border-bottom: 1px solid #186737;
             "
           >
             <strong
-              >${department}${companyName}</strong
+              >${department} BO Paper </strong
             >
           </p>
+
+          <table style="vertical-align: -webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+            <td>
+              ${phoneIcon}
+            </td>
+            
+            <td>
+            
+             ${phoneNumber}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span
+                style="
+                  display: block;
+                  background-color: #186737;
+                "
+                ><img
+                  style="
+                    display: block;
+                    background-color: #186737;
+                  "
+                  src="https://nwl-signature.netlify.app/images/email-icon-2x.png"
+                  alt=""
+                  width="13"
+              /></span>
+            </td>
+            <td>
+              <a
+                style="
+                  text-decoration: none;
+                  color: #000000;
+                  font-size: 12px;
+                "
+                href="mailto:${emailAddress}"
+                >&nbsp;${emailAddress}</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              ${websiteIcon}
+            </td>
+            
+            <td>
+              <a
+                style="
+                  text-decoration: none;
+                  color: #000000;
+                  font-size: 12px;
+                "
+                href="https://www.bopaper.com.br/" target="_blank"
+                >BO Paper</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
         </td>
+        
       </tr>
       <tr style="height: 22px">
-        <td style="height: 22px; text-align: center">
-          <a
-            style="
-              display: inline-block;
-              padding: 0px;
-              background-color: ${color};
-            "
-            href="https://facebook.com/${facebook}" target="_blank"
-            >${facebookIcon}</a
-          >&nbsp;<a
-            style="
-              display: inline-block;
-              padding: 0px;
-              background-color: ${color};
-            "
-            href="https://linkedin.com/${linkedin}" target="_blank"
-            >${linkedinIcon}</a
-          >&nbsp;<a
-            style="
-              display: inline-block;
-              padding: 0px;
-              background-color: ${color};
-            "
-            href="https://instagram.com/${instagram}" target="_blank"
-            >${instagramIcon}</a
-          >&nbsp;<a
-            style="
-              display: inline-block;
-              padding: 0px;
-              background-color: ${color};
-            "
-            href="https://youtube.com/${youtube}" target="_blank"
-            >${youtubeIcon}</a>
-        </td>
-        <td style="height: 22px">&nbsp;</td>
-        <td style="height: 22px">
-          <table style="vertical-align: -webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
-            <tbody>
-              <tr>
-                <td>
-                  ${phoneIcon}
-                </td>
-                <td>&nbsp;</td>
-                <td>
-                 ${phoneNumber}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <span
-                    style="
-                      display: block;
-                      background-color: ${color};
-                    "
-                    ><img
-                      style="
-                        display: block;
-                        background-color: ${color};
-                      "
-                      src="https://nwl-signature.netlify.app/images/email-icon-2x.png"
-                      alt=""
-                      width="13"
-                  /></span>
-                </td>
-                <td>&nbsp;</td>
-                <td>
-                  <a
-                    style="
-                      text-decoration: none;
-                      color: #000000;
-                      font-size: 12px;
-                    "
-                    href="mailto:${emailAddress}"
-                    >${emailAddress}</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  ${websiteIcon}
-                </td>
-                <td>&nbsp;</td>
-                <td>
-                  <a
-                    style="
-                      text-decoration: none;
-                      color: #000000;
-                      font-size: 12px;
-                    "
-                    href="${website}" target="_blank"
-                    >${website}</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+      <td style="height: 22px; text-align: center">
+      
+    </td>
+       
+          
+         
+      </tr>
+      <tr>
+      <td ><img
+      style="
+        max-width: 170px;
+        display: block;
+        margin: 0 auto;
+      "
+      src="images/gptw.jpg"
+      alt=""
+      max-width="170"
+    />
         </td>
       </tr>
     </tbody>
+
   </table>
   `;
 
@@ -393,9 +295,9 @@ function copy() {
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
   alert(
-    `Code Copied! 🖱 Paste (Ctr+V) this code into the signature box in your Thunderbird`
+    `Código copiado`
   );
-  button.innerHTML = "Code copied!";
+  button.innerHTML = "Codigo copiado";
 }
 let copyToClipboard = document
   .querySelector("#copyToClipboard")
@@ -423,13 +325,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Copy to the clipboard
     try {
       document.execCommand("copy");
-      copyButton.innerHTML = "Signature copied!";
+      copyButton.innerHTML = "Assinatura Copiada!";
       alert(
-        "Signature Copied! 🖱 Paste (Ctr+V) it into the signature box in your Zimbra"
+        "Assinatura copiada, dê um CTRL+V onde quiser inserir"
       );
     } catch (err) {
       // Unable to copy
-      copyButton.innerHTML = "Try again, Copy";
+      copyButton.innerHTML = "Tente novamente";
     } finally {
       // Restore the previous selection
       selection.removeAllRanges();
@@ -450,11 +352,11 @@ function required(event) {
   let regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/;
 
   if (firstName === "" || jobTitle === "" || emailAddress === "") {
-    alert("Please fill in all the required fields ☺🙏🏼");
+    alert("Por favor, preencha todos os campos obrigatórios, marcados com *");
   } else if (firstName !== "" && jobTitle !== "" && emailAddress.match(regex)) {
     handleSubmit(firstName, jobTitle, emailAddress);
   } else {
-    alert("Please write the correct email ID ☺🙏🏼");
+    alert("Por favor, preencha o email corretamente, ex.: contoso@bopaper.com.br");
   }
 }
 
