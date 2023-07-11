@@ -22,10 +22,20 @@ p {
   text-transform: capitalize;
 }
 
-table,
+table
+{
+  min-width:250px; 
+  vertical-align:-webkit-baseline-middle;
+   font-size: medium;
+   font-family: Arial, Helvetica, sans-serif; 
+   border: 0;
+}
+
 tr,
 td {
-  border: 0px solid #bbb9b9;
+  vertical-align:-webkit-baseline-middle;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif; 
 }
 
 h2 {
@@ -119,6 +129,13 @@ a.social-media {
   font-size: 24px;
   margin: 0px;
 }
+
+a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 12px;
+}
+
 
 .contact-icon {
   background-color: #84ac7a;

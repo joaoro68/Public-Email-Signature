@@ -26,13 +26,13 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
 
   let imageLogo = `<img
             style="
-              max-width: 130px;
+              max-height: 130px;
               display: block;
               margin: 0 auto;
             "
             src="images/signature.png"
             alt=""
-            max-width="130"
+            max-height="130"
           />`;
   function showLogo() {
     if (imageLogo !== "") {
@@ -119,7 +119,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                         display: block;
                         background-color: #186737;
                       "
-                      src="https://nwl-signature.netlify.app/images/link-icon-2x.png"
+                      src="images/link-icon-2x.png"
                       alt=""
                       width="13"
                   /></span>`;
@@ -139,14 +139,14 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
   let signature = document.querySelector("#signatureGenerated");
 
   // generate the resulted signature
-  signature.innerHTML = `<table style="min-width:250px; vertical-align:-webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
+  signature.innerHTML = `<table style="table">
     <tbody>
-      <tr >
-        <td ><a href="https://www.bopaper.com.br/" target="_blank">
+      <tr style="tr">
+        <td style="td"><a href="https://www.bopaper.com.br/" target="_blank">
           ${imageLogo}</a>
         </td>
-        <td  width: 25px">&nbsp;</td>
-        <td  style=" width: 100%; border-left: none; display: block;">
+        
+        <td  style="td">
           <h3
             style="
             min-width:150px;
@@ -192,14 +192,14 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
             >
           </p>
 
-          <table style="vertical-align: -webkit-baseline-middle; font-size: medium;font-family: Arial;" cellspacing="0" cellpadding="0">
-          <tbody>
+          <table style="table">
+          <tbody stlye="tbody">
             <tr>
             <td>
               ${phoneIcon}
             </td>
             
-            <td>
+            <td style="td">
             
              ${phoneNumber}
             </td>
@@ -216,18 +216,18 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
                     display: block;
                     background-color: #186737;
                   "
-                  src="https://nwl-signature.netlify.app/images/email-icon-2x.png"
+                  src="images/email-icon-2x.png"
                   alt=""
                   width="13"
               /></span>
             </td>
             <td>
               <a
-                style="
-                  text-decoration: none;
-                  color: #000000;
-                  font-size: 12px;
-                "
+              style="
+              text-decoration: none;
+              color: #000000;
+              font-size: 12px;
+            "
                 href="mailto:${emailAddress}"
                 >&nbsp;${emailAddress}</a
               >
@@ -241,10 +241,10 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
             <td>
               <a
                 style="
-                  text-decoration: none;
-                  color: #000000;
-                  font-size: 12px;
-                "
+                text-decoration: none;
+                color: #000000;
+                font-size: 12px;
+              "
                 href="https://www.bopaper.com.br/" target="_blank"
                 >BO Paper</a
               >
@@ -254,29 +254,7 @@ function handleSubmit(firstName, jobTitle, emailAddress) {
       </table>
         </td>
         
-      </tr>
-      <tr style="height: 22px">
-
-      <td style="height: 22px; text-align: center">
       
-    </td>
-       
-          
-         
-      </tr>
-      <tr>
-      <td ><img
-      style="
-        max-width: 170px;
-        display: block;
-        margin: 0 auto;
-      "
-      src="images/gptw.jpg"
-      alt=""
-      max-width="170"
-    />
-        </td>
-      </tr>
     </tbody>
 
   </table>
